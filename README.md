@@ -104,3 +104,9 @@ If you have a project that uses or extends Astra, let us know about it by extend
 ## Note
 
 This project may have breaking changes in minor versions until v1.0. Afterwhich semver will be followed. Contributions are always welcome!
+
+## Building from source
+
+```sh
+cargo build --release --no-default-features --features lua54
+```

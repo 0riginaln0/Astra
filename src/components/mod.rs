@@ -9,6 +9,7 @@ pub mod global;
 pub mod http;
 mod import;
 mod templates;
+pub mod markdown;
 
 pub async fn register_components(lua: &mlua::Lua) -> mlua::Result<()> {
     import::register_import_function(lua).await?;
@@ -21,7 +22,7 @@ pub async fn register_components(lua: &mlua::Lua) -> mlua::Result<()> {
     crypto::register_to_lua(lua)?;
     file_system::register_to_lua(lua)?;
     templates::TemplatingEngine::register_to_lua(lua)?;
-
+    markdown::MarkdownExtension::register_to_lua(lua)?;
     Ok(())
 }
 
